@@ -1,0 +1,69 @@
+默认的用户名和密码是： docker/tcuser
+
+
+
+
+scp 
+
+端口映射:
+
+
+sudo docker run -p 8000:8000 -i -t web /bin/bash
+
+docker exec -it 631c9450b945 /bin/bash
+
+docker ps -l -q
+
+python manage.py runserver 0.0.0.0:8000
+
+
+
+You will need to save the docker image as a tar file:
+
+docker save -o <save image to path> <image name>
+Then copy your image to a new system with regular file transfer tools such as cp or scp. After that you will have to load the image into docker:
+
+docker load -i <path to image tar file>
+PS: You may need to sudo all commands.
+
+
+commit:
+所以先用exit命令退出容器，再运行docker commit命令：
+
+$ sudo docker commit 614122c0aabb aoct/apache2
+$ git config --global user.name "ruili"
+$ git config --global user.email wu.ruili@cndmp.org
+
+
+
+
+
+
+启动docker容器：
+
+
+[stop container, to release already allocated port]
+docker@default:~$ docker ps
+docker@default:~$ docker stop NAME
+
+[enter docker image bash]
+docker@default:~$ docker images  --本地镜像文件
+docker@default:~$ docker run -p 8000:8000 -i -t web-ruili2-00 /bin/bash   
+
+
+[start web service]
+# python manage.py runserver 0.0.0.0:8000
+
+[make new docker image]
+docker@default:~$ docker ps -l -q
+e963c9cd3dae
+
+docker@default:~$ gitdocker commit e963c9cd3dae web-sunmu000
+f0979ebf430c68cedfb29e8e5f03a77cf7097d7b7863ceb3509ab00aeccd55b0
+
+[start a new bash]
+docker@default:~$ docker exec -it 631c9450b945 /bin/bash
+suodo
+[pull changes from Gitlab]
+docker@default:~$ git pull origin sunmu	
+

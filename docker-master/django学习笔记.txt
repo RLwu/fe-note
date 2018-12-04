@@ -1,0 +1,22 @@
+
+rest frame 下的 token验证，用curl 模拟post：
+
+curl -d "email=ema@123.com&password=123456" http://192.168.99.100:8000/rest-auth/login/
+
+curl -d "token=79f2e95262a76c07eda6f567b04e7993335f562f" http://192.168.99.100:8000/rest-auth/login/rest-auth/logout/ 
+
+curl -X GET http://127.0.0.1:8000/api/example/ -H 'Authorization: Token 79f2e95262a76c07eda6f567b04e7993335f562f'
+        
+curl -d "app_id=1&start_date=201501&end_date=201507" http://192.168.99.100:8000/activity/api/v1/getmonthlyuvbydate -H 'Authorization: Token 79f2e95262a76c07eda6f567b04e7993335f562f'
+
+
+
+curl -d "user_id=all" http://192.168.99.100:8000/api/v1/service/getorderlist -H 'Authorization: Token 79f2e95262a76c07eda6f567b04e7993335f562f'
+
+curl -d "user_id=20" http://192.168.99.100:8000/api/v1/service/getorderlist -H 'Authorization: Token 79f2e95262a76c07eda6f567b04e7993335f562f'
+
+
+curl -d "order_id=142" http://192.168.99.100:8000/api/v1/service/getorderdetail -H 'Authorization: Token 79f2e95262a76c07eda6f567b04e7993335f562f'
+
+
+curl -d "order_id=142&handle_code=0&cancel_reason=adsf" http://192.168.99.100:8000/api/v1/service/handleorder -H 'Authorization: Token 79f2e95262a76c07eda6f567b04e7993335f562f'
