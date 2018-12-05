@@ -19,16 +19,23 @@
 使用方法简单，对比[Tableau](https://github.com/RLwu/fe-note/tree/master/data-visualization-master/Tableau-master)，适合快速构建可视化项目
 
 ##### 数据源
+
 可以添加多找那个数据源，下面是链接数据库
+
 <img src="img/data-source.jpg"/>
 
 ##### 配置
+
 简单的配置实例
+
 <img src="img/configuration.jpg"/>
 
 ##### 过滤器
+
 添加一个小过滤器
+
 <img src="img/filter.jpg"/>
 
 ##### 封装指南
+
 感兴趣的童鞋可以自己封装Echarts，不废话，文档介绍的很详细了…
